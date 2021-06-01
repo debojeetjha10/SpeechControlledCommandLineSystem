@@ -1,5 +1,7 @@
 from scripts.speech import speech
 import os
+import colorama
+from colorama import Fore, Style
 DecisionVar = -1
 while True:
     print("to give command press 1 to end anything else")
@@ -8,6 +10,8 @@ while True:
         txt = speech().lower()
         lstxt = list(txt.split())
         """
+        The commands should be structured like below.
+
         create:  create a new file <base_name_of_the_file>
         eidt: edit <base_name_of_the_file>
         compile: compile <base_name_of_file>
@@ -15,10 +19,14 @@ while True:
         Delete c file:  delete <file_base_name>
         delete compiled file : delete compiled <file_base_name>
         """
-        print(txt)
-        print("if you wanted to run the command say yes else no")
+        print(Fore.CYAN + "You have said : " + txt)
+        print(Style.RESET_ALL)
+        print(Fore.BLUE+ "if you wanted to run the command say yes else no")
+        print(Style.RESET_ALL)
         tmtxt = speech().lower()
         if(tmtxt=="yes"):
+            print(Fore.GREEN + "Running your command.....")
+            print(Style.RESET_ALL)
             if(lstxt[0]=="create"):
                 commandtxt = "touch " + lstxt[4] + ".c"
                 os.system(commandtxt)
@@ -39,5 +47,8 @@ while True:
                 os.system(commandtxt)
             else:
                 print("touch " + lstxt[4] + "." + lstxt[2])
+        else:
+            print(Fore.RED + "Aborting.....")
+            print(Style.RESET_ALL)
     else:
         break
