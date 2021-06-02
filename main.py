@@ -1,4 +1,4 @@
-from scripts.speech import speech
+from scripts.speech import isYesNo, speech
 import os
 import colorama
 from colorama import Fore, Style
@@ -23,7 +23,7 @@ while True:
         print(Style.RESET_ALL)
         print(Fore.BLUE+ "if you wanted to run the command say yes else no")
         print(Style.RESET_ALL)
-        tmtxt = speech().lower()
+        tmtxt = isYesNo().lower()
         if(tmtxt=="yes"):
             print(Fore.GREEN + "Running your command.....")
             print(Style.RESET_ALL)
