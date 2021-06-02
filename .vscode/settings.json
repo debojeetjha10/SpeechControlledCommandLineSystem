@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/bin/python3"
+    "python.pythonPath": "/bin/python3",
+    //"editor.fontSize" : 20,
+    //"terminal.integrated.fontSize": 20
 }
